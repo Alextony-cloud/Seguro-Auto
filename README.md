@@ -3,7 +3,7 @@ webservices com arquitetura REST criado junto a MJV DevSchool
 * *API de seguro de automóveis*  **EM CONSTRUÇÃO**
 
 A estrutura do projeto vai ser dividida dessa forma:
-* Model: onde definimos os modelos ou seja as classes dos objetos que usamos no sistema
+* Entities: onde definimos os modelos ou seja as classes dos objetos que usamos no sistema
 * Repository: onde definimos o JPA para acessar os dados do BD
 * Service: onde definimos as regras de negócio para manipulação dos Models
 * Dto: onde definimos as classes em que serão consumidas e enviadas pelo frontend
