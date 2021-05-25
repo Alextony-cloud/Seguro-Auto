@@ -1,10 +1,12 @@
 package br.com.seguroauto.resources;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +28,7 @@ public class CadastroResource {
 	
 	/** Método responsável por retornar uma requisição HTTP do tipo get 
 	 * para buscar todos usuários
-	 * @param Cadastro 
+	 * @param 
 	 * @return list
 	 */
 	@GetMapping
@@ -35,6 +37,17 @@ public class CadastroResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	
-
+	/** Método responsável par retornar requisição get para buscar um 
+	 * usuário pelo id
+	 * @param Long id
+	 * @return id
+	 */
+	 
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Cadastro>FindById(@PathVariable Long id) {
+		Cadastro obj = service.findById(id);
+		return ResponseEntity.ok().body(obj);
+		
+		
+	}
 }
