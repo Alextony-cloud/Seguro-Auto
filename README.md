@@ -11,7 +11,7 @@ A estrutura do projeto vai ser dividida dessa forma:
 * Exception: onde definimos nossas exceções
 * Configuration: onde definimos as configurações do Swagger para documentar a API, a segurança do Spring Security e JWT
 
-Para mais detalhes sobre a descrição da aplicação -> 
+Para mais detalhes sobre a descrição da aplicação -> [desafio-final.pdf](https://github.com/Alextony-cloud/Seguro-auto/files/6539053/desafio-final.pdf)"
 ### Modelo Conceitual *(Prévia)*
 ![modelo conceitual](https://user-images.githubusercontent.com/77558941/119410286-ff6be000-bcbe-11eb-856c-bdbb35bfe5c4.png)
 ### Modelo lógico *(Prévia)*
