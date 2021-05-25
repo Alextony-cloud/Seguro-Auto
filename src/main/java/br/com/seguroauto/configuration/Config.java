@@ -29,9 +29,11 @@ public class Config implements CommandLineRunner{
 		
 		SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
 		
-		Cadastro c1 =  new Cadastro(null, "02089425480", "João Kleber", dataFormatada.parse("24/05/2021"));
+		Cadastro c1 =  new Cadastro(null, "02089425480", "J", dataFormatada.parse("24/05/2021"));
 		
 		cadastroRepository.save(c1);
+		
+		
 
 	
 		

@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+
 @Entity
 @Table(name = "tab_cadastro")
 public class Cadastro implements Serializable {
@@ -20,12 +23,24 @@ public class Cadastro implements Serializable {
 	private Long id;
 	private String cpf_Cnpj;
 	private String nome;
+	
+	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Date dataNascimento;
 	
+	/**
+	 * Construtor sem parametros
+	 */
 	public Cadastro() {
 		
 	}
 
+	/**
+	 * Construtor com a passagem de parametros
+	 * @param id
+	 * @param cpf_Cnpj
+	 * @param nome
+	 * @param dataNascimento
+	 */
 	public Cadastro(Long id, String cpf_Cnpj, String nome, Date dataNascimento) {
 		super();
 		this.id = id;
@@ -34,6 +49,10 @@ public class Cadastro implements Serializable {
 		this.dataNascimento = dataNascimento;
 	}
 
+	/**
+	 * Metódos Getters e setters da classe Cadastro
+	 * @return
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -66,6 +85,9 @@ public class Cadastro implements Serializable {
 		this.dataNascimento = dataNascimento;
 	}
 
+	/**
+	 * HashCode e equals referenciado por Id
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -1,14 +1,16 @@
 package br.com.seguroauto.resources;
 
-import java.util.List;
-import java.util.Optional;
+import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.seguroauto.Services.CadastroService;
 import br.com.seguroauto.entities.Cadastro;
@@ -48,6 +50,18 @@ public class CadastroResource {
 		Cadastro obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 		
-		
+	}
+	
+	/**
+	 * Método reponsável por fazer inserção da requisição web no banco de dados
+	 * @param cad
+	 * @return cad
+	 */
+	
+	@PostMapping
+	public ResponseEntity<Cadastro> insert(@RequestBody Cadastro cad) {
+		cad = service.insert(cad);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cad.getId()).toUri();
+		return ResponseEntity.created(uri).body(cad);
 	}
 }

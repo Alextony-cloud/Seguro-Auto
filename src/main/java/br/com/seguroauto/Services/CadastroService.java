@@ -29,5 +29,9 @@ public class CadastroService {
 		Optional<Cadastro> obj = cadastroRepository.findById(id);
 		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
+	
+	public Cadastro insert(Cadastro cad) {
+		return cadastroRepository.save(cad);
+	}
 
 }
